@@ -14,7 +14,7 @@ inputs:
   nodeId:
     type: string
     doc: "Node where DAR should be directed to"
-    default: "http://tesk-api-node-1:8080/ga4gh/tes"
+    default: "https://iderha-minikube-client2-srv.lcsb.uni.lu/ga4gh/tes"
 
   darId:
     doc: "DAR identifier"
