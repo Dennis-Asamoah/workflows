@@ -1,0 +1,30 @@
+#!/usr/bin/env cwl-runner
+
+class: CommandLineTool
+cwlVersion: v1.1
+
+doc: "Task to aggregate data provided by EDC"
+
+requirements:
+  WorkReuse:
+    enableReuse: false
+
+hints:
+  - class: DockerRequirement
+    dockerPull: gitlab.lcsb.uni.lu:4567/luca.bolzani/iderha-test-deployment/test-aggregate-remote
+
+inputs:
+  - id: input2
+    type: File
+    doc: "File containing the url where the data is"
+    inputBinding:
+      position: 1
+
+outputs:
+  - id: partial
+    type: File
+    outputBinding:
+      glob: aggregated-ages.json
+    doc: "The aggregated values from partial data retrieved from EDC"
+
+baseCommand: ["aggregate_remote"]

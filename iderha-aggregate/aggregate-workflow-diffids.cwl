@@ -1,0 +1,53 @@
+#!/usr/bin/env cwl-runner
+
+class: Workflow
+cwlVersion: v1.0
+
+inputs:
+  - id: input
+    type: File
+
+  - id: input2
+    type: File
+
+outputs:
+  - id: aggregated
+    type: File
+    outputSource: aggregate_final/final-output
+
+steps:
+  - id: pull_1
+    run: aggregate-pulldata.cwl.yml
+    in:
+      - { id: input, source: input }
+    out:
+      - datalink
+
+  - id: aggregate_1
+    run: aggregate-remote.cwl.yml
+    in:
+      - { id: input, source: pull_1/datalink }
+    out:
+      - partial
+
+  - id: pull_2
+    run: aggregate-pulldata2.cwl.yml
+    in:
+      - { id: input2, source: input2 }
+    out:
+      - datalink
+
+  - id: aggregate_2
+    run: aggregate-remote2.cwl.yml
+    in:
+      - { id: input2, source: pull_2/datalink }
+    out:
+      - partial
+
+  - id: aggregate_final
+    run: aggregate-central.cwl.yml
+    in:
+      - { id: input-remote-1, source: aggregate_1/partial }
+      - { id: input-remote-2, source: aggregate_2/partial }
+    out:
+      - { id: final-output }
