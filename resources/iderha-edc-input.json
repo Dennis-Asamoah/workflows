@@ -1,0 +1,12 @@
+{
+    "ASSET_ID": "40c111ba-6aac-476f-a8f5-0cce17b5ffda",
+    "EDC_CONSUMER_ID": "3e874057-cfe7-4d6a-9077-17bd29ebf128",
+    "EDC_PROVIDER_ID": "ae62d168-5657-4614-ac9a-3c4d8cad5504",
+    "EDC_PROVIDER_PROTOCOL_URL": "http://edc-provider:19194/protocol",
+    "EDC_PROVIDER_PUBLIC_URL": "http://edc-provider:19291/public",
+    "DATA_DESTINATION_URL": "http://service-upload:8080/api/s3/upload",
+    "EDC_CONSUMER_MANAGEMENT_URL": "http://edc-consumer:29193/management",
+    "FTP_DATA_ADDRESS": "data-upload/isst-data-iderha-remote-node-1-test.txt",
+    "OUTPUT_FILE": "output.txt",
+    "GATEWAY_ADDRESS": "http://gateway-service:5000"
+}
