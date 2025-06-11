@@ -5,7 +5,7 @@ doc: "Task to send a cURL request to edc endpoint"
 
 requirements:
   DockerRequirement:
-    dockerPull: registry.gitlab.com/uniluxembourg/lcsb/biocore/iderha/iderha-cwl-wes-workflows/iderha-mdc-management:latest
+    dockerPull: registry.gitlab.com/uniluxembourg/lcsb/biocore/iderha/iderha-platform/unilu/iderha-cwl-wes-workflows/iderha-mdc-management:latest
   WorkReuse:
     enableReuse: false
 
