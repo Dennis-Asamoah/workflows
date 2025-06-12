@@ -4,7 +4,7 @@ doc: Downloads policy files assigned to datasets in a dcat:Datacatalog object
 
 requirements:
   DockerRequirement:
-    dockerPull: registry.gitlab.com/uniluxembourg/lcsb/biocore/iderha/iderha-cwl-wes-workflows/iderha-mdc-management:latest
+    dockerPull: gitlab.lcsb.uni.lu:4567/luca.bolzani/iderha-test-deployment/iderha-mdc-management
 
 hints:
   RemoteLocationRequirement:
