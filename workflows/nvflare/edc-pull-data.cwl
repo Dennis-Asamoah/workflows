@@ -7,7 +7,7 @@ requirements:
   WorkReuse:
     enableReuse: false
   DockerRequirement:
-    dockerPull: gitlab.lcsb.uni.lu:4567/luca.bolzani/iderha-test-deployment/edc-client:0.7.1
+    dockerPull: gitlab.lcsb.uni.lu:4567/luca.bolzani/iderha-test-deployment/edc-client
 
 hints:
   RemoteLocationRequirement:
