@@ -57,7 +57,7 @@ steps:
     in:
       datasetRequest: datasetRequests
       location: locations
-    out: ["dataset1", "dataset2"]
+    out: [dataset]
     scatter: [datasetRequest, location]
     scatterMethod: dotproduct
     run: edc-pull-data-subworkflow.cwl
@@ -66,8 +66,7 @@ steps:
     run: nvflare-get-stats.cwl
     in:
       data_files:
-        source: [subworkflow/dataset1, subworkflow/dataset2]
-        linkMerge: merge_nested
+        source: subworkflow/dataset
 
     out: ["logs" , "output_file"]
 
