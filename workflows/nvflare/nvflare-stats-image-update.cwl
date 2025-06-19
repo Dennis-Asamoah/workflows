@@ -5,6 +5,7 @@ doc: Workflow to build figure from federated analysis
 requirements:
   MultipleInputFeatureRequirement: {}
   ScatterFeatureRequirement: {}
+  StepInputExpressionRequirement: {}
 
 inputs:
   datasetRequests:
