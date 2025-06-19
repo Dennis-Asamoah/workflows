@@ -4,8 +4,8 @@ class: Workflow
 doc: Workflow to build figure from federated analysis
 requirements:
   MultipleInputFeatureRequirement: {}
+  SubworkflowFeatureRequirement: {}
   ScatterFeatureRequirement: {}
-  StepInputExpressionRequirement: {}
 
 inputs:
   datasetRequests:
@@ -54,7 +54,7 @@ outputs:
       build_image/pic
 
 steps:
-  pull:
+  subworkflow:
     in:
       datasetRequest: datasetRequests
       location: locations
@@ -67,7 +67,7 @@ steps:
     run: nvflare-get-stats.cwl
     in:
       data_files:
-        source: pull/dataset
+        source: subworkflow/dataset
 
     out: ["logs" , "output_file"]
 
