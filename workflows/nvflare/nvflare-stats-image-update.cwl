@@ -54,7 +54,7 @@ outputs:
       build_image/pic
 
 steps:
-  subworkflow:
+  pull:
     in:
       datasetRequest: datasetRequests
       location: locations
@@ -67,7 +67,7 @@ steps:
     run: nvflare-get-stats.cwl
     in:
       data_files:
-        source: subworkflow/dataset
+        source: pull/dataset
 
     out: ["logs" , "output_file"]
 
