@@ -3,7 +3,7 @@ class: CommandLineTool
 doc: Run exploratory analysis with NVidia Flare
 requirements:
   DockerRequirement:
-    dockerPull: gitlab.lcsb.uni.lu:4567/luca.bolzani/iderha-test-deployment/nvflare-admin
+    dockerPull: registry.gitlab.com/uniluxembourg/lcsb/biocore/iderha/iderha-platform/unilu/iderha-cwl-wes-workflows/nvflare-stats_omop:latest
 
 inputs:
   data_files:
