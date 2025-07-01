@@ -71,7 +71,7 @@ steps:
         valueFrom: $(self.map(function(o){ return o['basename'] }))
         source: policyFiles
     out: [status]
-    when: $(inputs.policyStatus.some(function(o){return o.status.search("2[0-9]{2}") === 0;}))
+    # when: $(inputs.policyStatus.some(function(o){return o.status.search("2[0-9]{2}") === 0;}))
 
   notify:
     run: notify-dar-error.cwl
