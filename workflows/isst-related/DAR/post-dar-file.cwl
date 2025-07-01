@@ -41,18 +41,18 @@ outputs:
             outputEval: $(self[0].contents)
 
 baseCommand: curl
-arguments: $(
+arguments: "$(
   [
-    "-F", "userId=" + inputs.userId,
-    "-F", "policyId=" + inputs.policyId,
-    "-o", "nope.txt",
-    "-s",
-    "-w", "%{http_code}",
-    "--retry", "2",
-    "--retry-delay", "10",
-    "http://policy-issuer:1919/api/v1/file/upload"
+    '-F', 'userId=' + inputs.userId,
+    '-F', 'policyId=' + inputs.policyId,
+    '-o', 'nope.txt',
+    '-s',
+    '-w', '%{http_code}',
+    '--retry', '2',
+    '--retry-delay', '10',
+    'http://policy-issuer:1919/api/v1/file/upload'
   ].concat(
-    inputs.policyFile ? ["-F", "file=@" + inputs.policyFile.path] : []
+    inputs.policyFile ? ['-F', 'file=@' + inputs.policyFile.path] : []
   )
-)
+)"
 stdout: response.txt
