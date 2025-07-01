@@ -9,7 +9,7 @@ requirements:
 inputs:
   policyFiles:
     doc: "Access Forms filled by user"
-    type: File[]?
+    type: File[]
     default: []
 
   nodeId:
