@@ -1,4 +1,4 @@
-cwlVersion: v1.2
+cwlVersion: v1.0
 class: CommandLineTool
 
 doc: "Task to send a cURL request to edc endpoint"
@@ -50,12 +50,7 @@ inputs:
       items: string
     inputBinding:
       prefix: -f
-      valueFrom: |
-        $(if (self.length > 0) {
-          return self.join(' -f ');
-        } else {
-          return '--no-files';  # Dummy argument
-        })
+      valueFrom: "$(self.length > 0 ? self.join(' -f ') : '--no-files')"
     default: []
 
 outputs:
