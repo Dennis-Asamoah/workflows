@@ -70,7 +70,7 @@ steps:
         source: postDARFile/out
         default: []
       file:
-        valueFrom: $(self ? self.map(function(o){ return o['basename'] }) : [])
+        valueFrom: "$(self ? self.map(function(o){ return o['basename'] }) : [])"
         source: policyFiles
         default: []
     out: [status]
