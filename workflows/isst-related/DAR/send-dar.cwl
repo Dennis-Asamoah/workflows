@@ -70,8 +70,9 @@ steps:
         source: postDARFile/out
         default: []
       file:
-        valueFrom: $(self.map(function(o){ return o['basename'] }))
+        valueFrom: $(self ? self.map(function(o){ return o['basename'] }) : [])
         source: policyFiles
+        default: []
     out: [status]
     # when: $(inputs.policyStatus.some(function(o){return o.status.search("2[0-9]{2}") === 0;}))
 
