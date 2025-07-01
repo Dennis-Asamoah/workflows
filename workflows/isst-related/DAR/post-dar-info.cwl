@@ -50,7 +50,6 @@ inputs:
       items: string
     inputBinding:
       prefix: -f
-      valueFrom: "$(self.length > 0 ? self.join(' -f ') : '--no-files')"
     default: []
 
 outputs:
