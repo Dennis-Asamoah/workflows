@@ -10,7 +10,7 @@ inputs:
   policyFiles:
     doc: "Access Forms filled by user"
     type: File[]?
-    default: [
+    default: []
 
   nodeId:
     type: string
