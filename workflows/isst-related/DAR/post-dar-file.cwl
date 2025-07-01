@@ -32,7 +32,7 @@ outputs:
         filename:
           type: string
           outputBinding:
-            outputEval: $(inputs.policyFile ? inputs.policyFile.basename : "")
+            outputEval: "$(inputs.policyFile ? inputs.policyFile.basename : '')"
         status:
           type: string
           outputBinding:
