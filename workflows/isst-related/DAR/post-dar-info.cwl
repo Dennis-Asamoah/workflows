@@ -50,7 +50,12 @@ inputs:
       items: string
     inputBinding:
       prefix: -f
-      itemSeparator: " -f "  # Explicit separator
+      valueFrom: |
+        $(if (self.length > 0) {
+          return self.join(' -f ');
+        } else {
+          return '--no-files';  # Dummy argument
+        })
     default: []
 
 outputs:
