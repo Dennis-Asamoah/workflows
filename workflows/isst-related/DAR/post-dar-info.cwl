@@ -1,11 +1,11 @@
-cwlVersion: v1.0
+cwlVersion: v1.2
 class: CommandLineTool
 
 doc: "Task to send a cURL request to edc endpoint"
 
 requirements:
   DockerRequirement:
-    dockerPull: gitlab.lcsb.uni.lu:4567/luca.bolzani/iderha-test-deployment/iderha-mdc-management
+    dockerPull: registry.gitlab.com/uniluxembourg/lcsb/biocore/iderha/iderha-platform/unilu/iderha-cwl-wes-workflows/iderha-mdc-management:latest
   WorkReuse:
     enableReuse: false
 
@@ -50,6 +50,7 @@ inputs:
       items: string
     inputBinding:
       prefix: -f
+      valueFrom: "$(self.length > 0 ? self.join(' -f ') : '--no-files')"
     default: []
 
 outputs:
