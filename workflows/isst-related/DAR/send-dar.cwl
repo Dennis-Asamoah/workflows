@@ -66,7 +66,9 @@ steps:
       userId: userId
       policyId: policyId
       additionalInformation: additionalInformation
-      policyStatus: postDARFile/out
+      policyStatus: 
+        source: postDARFile/out
+        default: []
       file:
         valueFrom: $(self.map(function(o){ return o['basename'] }))
         source: policyFiles
