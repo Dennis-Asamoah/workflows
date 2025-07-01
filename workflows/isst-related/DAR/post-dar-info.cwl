@@ -48,9 +48,9 @@ inputs:
     type:
       type: array
       items: string
-      inputBinding:
-        prefix: -f
-        itemSeparator: " -f "  # Explicit separator
+    inputBinding:
+      prefix: -f
+      itemSeparator: " -f "  # Explicit separator
     default: []
 
 outputs:
