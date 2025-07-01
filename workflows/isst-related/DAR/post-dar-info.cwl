@@ -50,6 +50,7 @@ inputs:
       items: string
       inputBinding:
         prefix: -f
+        itemSeparator: " -f "  # Explicit separator
     default: []
 
 outputs:
