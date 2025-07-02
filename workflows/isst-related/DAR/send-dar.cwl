@@ -15,7 +15,7 @@ inputs:
   nodeId:
     type: string
     doc: "Node where DAR should be directed to"
-    default: "https://iderha-minikube-client2-srv.lcsb.uni.lu/ga4gh/tes"
+    default: "http://tesk-api-node-1:8080/ga4gh/tes"
 
   darId:
     doc: "DAR identifier"
@@ -66,15 +66,14 @@ steps:
       userId: userId
       policyId: policyId
       additionalInformation: additionalInformation
-      policyStatus: 
-        source: postDARFile/out
+      policyStatus: postDARFile/out
       file:
         valueFrom: $(self.map(function(o){ return o['basename'] }))
         source: policyFiles
-        default: []
     out: [status]
-    # when: $(inputs.policyStatus.some(function(o){return o.status.search("2[0-9]{2}") === 0;}))
+    # Verify to true when policystatus is [] or if non empty must have a 2XX status code
     when: ${return (inputs.policyStatus.length === 0) ||  inputs.policyStatus.some(function(o){return o.status.search("2[0-9]{2}") === 0;})}
+
   notify:
     run: notify-dar-error.cwl
     in:
