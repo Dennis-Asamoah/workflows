@@ -13,7 +13,7 @@ hints:
 
 inputs:
   policyFile:
-    type: File?
+    type: File
 
   policyId:
     type: string
@@ -32,7 +32,7 @@ outputs:
         filename:
           type: string
           outputBinding:
-            outputEval: "$(inputs.policyFile ? inputs.policyFile.basename : '')"
+            outputEval: $(inputs.policyFile.basename)
         status:
           type: string
           outputBinding:
@@ -42,6 +42,8 @@ outputs:
 
 baseCommand: curl
 arguments:
+  - -F
+  - file=@$(inputs.policyFile.path)
   - -F
   - userId="$(inputs.userId)"
   - -F
@@ -56,4 +58,5 @@ arguments:
   - --retry-delay
   - "10"
   - http://policy-issuer:1919/api/v1/file/upload
+
 stdout: response.txt
