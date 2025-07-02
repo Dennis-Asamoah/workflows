@@ -74,7 +74,7 @@ steps:
         default: []
     out: [status]
     # when: $(inputs.policyStatus.some(function(o){return o.status.search("2[0-9]{2}") === 0;}))
-    when: ${(inputs.policyStatus.length === 0) ||  inputs.policyStatus.some(function(o){return o.status.search("2[0-9]{2}") === 0;})}
+    when: ${return (inputs.policyStatus.length === 0) ||  inputs.policyStatus.some(function(o){return o.status.search("2[0-9]{2}") === 0;})}
   notify:
     run: notify-dar-error.cwl
     in:
