@@ -68,13 +68,12 @@ steps:
       additionalInformation: additionalInformation
       policyStatus: 
         source: postDARFile/out
-        default: [{status: "200"}]
       file:
         valueFrom: "$(self ? self.map(function(o){ return o['basename'] }) : [])"
         source: policyFiles
         default: []
     out: [status]
-    when: $(inputs.policyStatus.some(function(o){return o.status.search("2[0-9]{2}") === 0;}))
+    # when: $(inputs.policyStatus.some(function(o){return o.status.search("2[0-9]{2}") === 0;}))
 
   notify:
     run: notify-dar-error.cwl
