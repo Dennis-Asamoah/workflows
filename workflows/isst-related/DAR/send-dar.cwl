@@ -74,7 +74,16 @@ steps:
         default: []
     out: [status]
     # when: $(inputs.policyStatus.some(function(o){return o.status.search("2[0-9]{2}") === 0;}))
-
+    when: |
+      ${
+      // Case 1: No files to process (skip status checks)
+      (inputs.policyFiles.length === 0) ||
+      
+      // Case 2: Files exist and at least one succeeded (original condition)
+      inputs.policyStatus.some(function(o){
+        return o.status.search("2[0-9]{2}") === 0;
+      })
+    }
   notify:
     run: notify-dar-error.cwl
     in:
