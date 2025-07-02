@@ -50,7 +50,6 @@ inputs:
       items: string
     inputBinding:
       prefix: -f
-      valueFrom: "${self.length > 0 ?self.map(function(f) { return '-f ' + f; }).join(' ') :''}"
     default: []
 
 outputs:
