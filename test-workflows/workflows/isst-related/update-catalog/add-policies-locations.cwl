@@ -4,7 +4,7 @@ doc: "Loads a DCAT containing a catalog and adds the location of required policy
 
 requirements:
   DockerRequirement:
-    dockerPull: registry.gitlab.com/uniluxembourg/lcsb/biocore/iderha/iderha-platform/unilu/iderha-cwl-wes-workflows/iderha-mdc-management:latest
+    dockerPull: registry.gitlab.com/uniluxembourg/lcsb/biocore/iderha/iderha-platform/unilu/iderha-cwl-wes-workflows/iderha-mdc-management:correct-s3-url
 
 hints:
   RemoteLocationRequirement:
