@@ -1,0 +1,78 @@
+#!/usr/bin/env cwlrunner
+
+class: Workflow
+
+cwlVersion: v1.0
+
+requirements:
+  InlineJavascriptRequirement: {}
+
+hints:
+  RemoteLocationRequirement:
+    nodeUri: $(inputs.location || null)
+
+inputs:
+  - id: input
+    type: File
+    doc: "to be hashed all the ways"
+
+  - id: location
+    type: string?
+
+outputs:
+  - id: output
+    type: File
+    outputSource: unify/output
+
+steps:
+  - id: md5
+    run: hashsplitter-md5.cwl.yml
+    in:
+      - { id: input, source: input }
+      - { id: location, source: location }
+    out:
+      - { id: output }
+
+  - id: sha
+    run: hashsplitter-sha.cwl.yml
+    in:
+      - { id: input, source: input }
+      - { id: location, source: location }
+    out:
+      - { id: output }
+
+  - id: whirlpool
+    run: hashsplitter-whirlpool.cwl.yml
+    in:
+      - { id: input, source: input }
+      - { id: location, source: location }
+    out:
+      - { id: output }
+
+  - id: shake
+    run: hashsplitter-shake.cwl.yml
+    in:
+      - { id: input, source: input }
+      - { id: location, source: location }
+    out:
+      - { id: output }
+
+  - id: sm3
+    run: hashsplitter-sm3.cwl.yml
+    in:
+      - { id: input, source: input }
+      - { id: location, source: location }
+    out:
+      - { id: output }
+
+  - id: unify
+    run: hashsplitter-unify.cwl.yml
+    in:
+      - { id: md5, source: md5/output }
+      - { id: sha, source: sha/output }
+      - { id: whirlpool, source: whirlpool/output }
+      - { id: shake, source: shake/output }
+      - { id: sm3, source: sm3/output }
+      - { id: location, source: location }
+    out:
+      - { id: output }

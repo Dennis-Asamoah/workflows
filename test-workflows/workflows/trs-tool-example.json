@@ -1,0 +1,126 @@
+{
+  "aliases": [
+    "630d31c3-381e-488d-b639-ce5d047a0142",
+    "dockstore.org:630d31c3-381e-488d-b639-ce5d047a0142",
+    "bio.tools:630d31c3-381e-488d-b639-ce5d047a0142"
+  ],
+  "checker_url": "string",
+  "description": "string",
+  "has_checker": true,
+  "name": "alpine",
+  "organization": "string",
+  "toolclass": {
+    "description": "string",
+    "id": "string",
+    "name": "string"
+  },
+  "versions": [
+    {
+      "author": [
+        "string"
+      ],
+      "descriptor_type": [
+        "CWL"
+      ],
+      "files": [
+        {
+          "file_wrapper": {
+            "checksum": [
+              {
+                "checksum": "ea2a5db69bd20a42976838790bc29294df3af02b",
+                "type": "sha1"
+              }
+            ],
+            "content": "string",
+            "url": "string"
+          },
+          "tool_file": {
+            "file_type": "OTHER",
+            "path": "string"
+          },
+          "type": "CWL"
+        }
+      ],
+      "images": [
+        {
+          "checksum": [
+            {
+              "checksum": "77af4d6b9913e693e8d0b4b294fa62ade6054e6b2f1ffb617ac955dd63fb0182",
+              "type": "sha256"
+            }
+          ],
+          "image_name": "alpine",
+          "image_type": "Docker",
+          "registry_host": "string",
+          "size": 0,
+          "updated": "string"
+        }
+      ],
+      "included_apps": [
+        "https://bio.tools/tool/mytum.de/SNAP2/1",
+        "https://bio.tools/bioexcel_seqqc"
+      ],
+      "is_production": true,
+      "name": "alpine",
+      "signed": true,
+      "verified": true,
+      "verified_source": [
+        "string"
+      ]
+    },
+    {
+      "author": [
+        "string"
+      ],
+      "descriptor_type": [
+        "CWL"
+      ],
+      "files": [
+        {
+          "file_wrapper": {
+            "checksum": [
+              {
+                "checksum": "ea2a5db69bd20a42976838790bc29294df3af02b",
+                "type": "sha1"
+              }
+            ],
+            "content": "string",
+            "url": "string"
+          },
+          "tool_file": {
+            "file_type": "OTHER",
+            "path": "string"
+          },
+          "type": "CWL"
+        }
+      ],
+      "id": "v1",
+      "images": [
+        {
+          "checksum": [
+            {
+              "checksum": "77af4d6b9913e693e8d0b4b294fa62ade6054e6b2f1ffb617ac955dd63fb0182",
+              "type": "sha256"
+            }
+          ],
+          "image_name": "alpine",
+          "image_type": "Docker",
+          "registry_host": "string",
+          "size": 0,
+          "updated": "string"
+        }
+      ],
+      "included_apps": [
+        "https://bio.tools/tool/mytum.de/SNAP2/1",
+        "https://bio.tools/bioexcel_seqqc"
+      ],
+      "is_production": true,
+      "name": "string",
+      "signed": true,
+      "verified": true,
+      "verified_source": [
+        "string"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+#!/usr/bin/env cwl-runner
+
+cwlVersion: v1.0
+class: CommandLineTool
+
+doc: "hash input through shake256"
+
+hints:
+  - class: DockerRequirement
+    dockerPull: kubler/openssl
+  
+  - class: ResourceRequirement
+    coresMin: 1
+    ramMin: 2
+    outdirMin: 1
+
+inputs:
+  - id: input
+    type: File
+    doc: "original content"
+    inputBinding:
+      position: 1
+
+  - id: location
+    type: string?
+
+outputs:
+  - id: output
+    type: stdout
+
+stdout: shake
+
+baseCommand: ["openssl", "dgst"]
+
+arguments: ["-shake256"]
